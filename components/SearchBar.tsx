@@ -19,7 +19,7 @@ const SearchButton = ({ buttonStyles }: { buttonStyles: string }) => (
 
 function SearchBar() {
   const [manufacturer, setManufacturer] = useState('');
-  const [model, setmodel] = useState('');
+  const [model, setModel] = useState('');
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
@@ -73,7 +73,7 @@ function SearchBar() {
           name="model"
           value={model}
           onChange={(e) => {
-            setmodel(e.target.value);
+            setModel(e.target.value);
           }}
           placeholder="Tiguan"
           className="searchbar__input"
