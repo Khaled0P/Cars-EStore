@@ -27,6 +27,7 @@ function SearchBar() {
     if (manufacturer === '' && model === '') {
       return alert('Please fill in the search bar');
     }
+
     updateSearchParams(
       model.toLocaleLowerCase(),
       manufacturer.toLocaleLowerCase()
@@ -45,6 +46,10 @@ function SearchBar() {
     } else {
       searchParams.delete('manufacturer');
     }
+
+    //reset page number
+    searchParams.set('limit', '10');
+
     const newPathName = `${
       window.location.pathname
     }?${searchParams.toString()}`;

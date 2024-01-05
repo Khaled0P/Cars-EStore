@@ -13,6 +13,9 @@ function CustomFilter({ title, options }: CustomFilterProps) {
 
   // update the URL search parameters and navigate to the new URL
   const handleUpdateParams = (e: { title: string; value: string }) => {
+    //reset page number
+    updateSearchParams('limit', '10');
+
     const newPathName = updateSearchParams(title, e.value.toLowerCase());
 
     router.push(newPathName, { scroll: false });
