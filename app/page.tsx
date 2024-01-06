@@ -2,6 +2,7 @@ import { CustomFilter, Hero, SearchBar, CarCard, ShowMore } from '@/components';
 import { fuels, yearsOfProduction } from '@/constants/constants';
 import { HomeProps } from '@/types';
 import { fetchCars } from '@/utils';
+import { v4 as uuidv4 } from 'uuid';
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
@@ -45,7 +46,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car) => (
-                <CarCard car={car} key={car.make + car.model + car.year} />
+                <CarCard car={car} key={uuidv4()} />
               ))}
             </div>
             <ShowMore
